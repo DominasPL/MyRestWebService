@@ -3,7 +3,9 @@ package com.github.dominaspl.myrestservice.bootstrap;
 import com.github.dominaspl.myrestservice.domain.entities.Customer;
 import com.github.dominaspl.myrestservice.repositories.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BootStrapData implements CommandLineRunner {
 
     private final CustomerRepository customerRepository;

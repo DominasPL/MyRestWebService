@@ -2,9 +2,11 @@ package com.github.dominaspl.myrestservice.services;
 
 import com.github.dominaspl.myrestservice.domain.entities.Customer;
 import com.github.dominaspl.myrestservice.repositories.CustomerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
