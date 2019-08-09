@@ -3,6 +3,7 @@ package com.github.dominaspl.myrestservice.services;
 import com.github.dominaspl.myrestservice.domain.entities.Customer;
 import com.github.dominaspl.myrestservice.repositories.CustomerRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -17,12 +18,17 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer findCustomerById(Long id) {
-        return customerRepository.getOne(id);
+        return customerRepository.findById(id).get();
     }
 
     @Override
     public List<Customer> findAllCustomers() {
         return customerRepository.findAll();
+    }
+
+    @Override
+    public Customer saveCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 
 
